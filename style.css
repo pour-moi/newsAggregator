@@ -1,0 +1,165 @@
+ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.headingImage {
+  position: relative;
+  left: 10%;
+  width: 75vw;
+  height: 65vh;
+  display: block;
+}
+
+.trendingNews {
+  display: flex;
+  gap: 2em;
+}
+.trend {
+  display: flex;
+  justify-content: space-around;
+}
+.breakingNews {
+  border-bottom: 1px solid black;
+}
+.breaking-news__image {
+  width: 25vw;
+  height: 25vh;
+  margin-bottom: 1em;
+}
+.trending-news__image {
+  width: 25vw;
+  height: 25vh;
+  margin-bottom: 1em;
+}
+a {
+  text-decoration: none;
+}
+
+.sport {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sportPage img {
+  border: 1px solid black;
+  width: 25vw;
+  height: 25vh;
+  margin-bottom: 2em;
+}
+
+.trendingNews-description,
+.trendingNews-title {
+  width: 50%;
+}
+.trendingNews-title {
+  margin: 0;
+}
+
+@media (max-width: 425px) {
+  @font-face {
+    font-family: "SF";
+    src: url(SF-Pro-Text-Regular.otf);
+  }
+  @font-face {
+    font-family: "SF Bold";
+    src: url(SF-Pro-Text-Bold.otf);
+  }
+  @font-face {
+    font-family: Lora;
+    src: url(Lora-Regular.ttf);
+  }
+  h5 {
+    font-family: Lora;
+  }
+  .head {
+    font-size: larger;
+  }
+  input {
+    border-style: none;
+    background-color: whitesmoke;
+    width: 85%;
+  }
+  .searchbox {
+    background-color: whitesmoke;
+    padding: 1em;
+    border-radius: 11em;
+  }
+
+  ul {
+    display: flex;
+    padding-left: 0px;
+    overflow-y: scroll;
+  }
+  h2 {
+    margin-bottom: 1.5em;
+    font-size: 0.9em;
+    font-family: "SF Bold";
+  }
+
+  ul h2 {
+    display: none;
+  }
+  a {
+    color: grey;
+  }
+  li {
+    font-size: 0.9em;
+    background-color: whitesmoke;
+    padding: 0.6em;
+    margin: 0.5em;
+    border-radius: 3em;
+    font-family: SF;
+  }
+  .headingImage {
+    display: none;
+  }
+  .trend {
+    display: block;
+    overflow: hidden;
+  }
+  .trendingNews {
+    display: block;
+    gap: 2em;
+  }
+  .trendd {
+    display: flex;
+    overflow-y: scroll;
+    gap: 1em;
+  }
+  .trendingNews-description {
+    display: none;
+  }
+  .trending-news__image {
+    width: 50vw;
+    height: 15vh;
+    border-radius: 1em;
+    margin-bottom: 1em;
+  }
+  input:focus {
+    outline-style: none;
+  }
+
+  .trendingNews-title {
+    width: 100%;
+  }
+  .breaking-news__image {
+    width: 37%;
+    height: 17vh;
+    margin-bottom: 1em;
+    border-radius: 1em;
+  }
+
+  .breakingNews {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+  .breakingNews {
+    border-bottom: none;
+  }
+  .breakingNewsTitle {
+    width: 90%;
+  }
+}
