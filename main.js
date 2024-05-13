@@ -2,7 +2,7 @@ const headerNews = document.querySelector(".headingImage");
 const trendingNews = document.querySelector(".trending-news__image");
 const trendingNewsCatagories = document.querySelector(".trendingNews");
 const url =
-  "https://newsapi.org/v2/top-headlines?country=us&apiKey=07db1280554f4a77b08ddc20766da064";
+  "https://newsapi.org/v2/top-headlines?country=us&apiKey=f9bce01001494f7dad469d0aeafbca16";
 
 fetch(url)
   .then((response) => response.json())
@@ -18,7 +18,7 @@ fetch(url)
 // }
 
 const NewsAPI =
-  "https://newsapi.org/v2/everything?sources=associated-press&apiKey=07db1280554f4a77b08ddc20766da064";
+  "https://newsapi.org/v2/everything?sources=associated-press&apiKey=f9bce01001494f7dad469d0aeafbca16";
 
 const all = document.querySelectorAll(".trendingNews");
 
@@ -57,7 +57,7 @@ fetch(url)
 
 const sportsAll = document.querySelectorAll(".sportPage");
 const sportURL =
-  "https://newsapi.org/v2/everything?sources=espn&apiKey=07db1280554f4a77b08ddc20766da064";
+  "https://newsapi.org/v2/everything?sources=espn&apiKey=f9bce01001494f7dad469d0aeafbca16";
 fetch(sportURL)
   .then((response) => response.json())
   .then((data) => {
