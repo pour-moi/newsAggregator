@@ -145,10 +145,9 @@ a {
     width: 100%;
   }
   .breaking-news__image {
-    width: 37%;
-    height: 17vh;
+    width: 30%;
+    height: 10%;
     margin-bottom: 1em;
-    border-radius: 1em;
   }
 
   .breakingNews {
