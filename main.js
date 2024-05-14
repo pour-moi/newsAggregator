@@ -1,3 +1,43 @@
+for (let i = 0; i < 7; i++) {
+  const trendingNews = document.createElement("div");
+  const trendingNewsImage = document.createElement("img");
+  const titleAndDescDiv = document.createElement("div");
+  const trendTitle = document.createElement("h5");
+  const trendDescription = document.createElement("p");
+
+  trendTitle.textContent = "Title";
+  trendingNews.classList.add("trendingNews");
+  document.querySelector("#trendingNewsContainer").appendChild(trendingNews);
+
+  trendingNewsImage.classList.add("trending-news__image");
+  trendTitle.classList.add("trendingNews-title");
+  trendDescription.classList.add("trendingNews-description");
+
+  trendingNews.append(trendingNewsImage, titleAndDescDiv);
+  titleAndDescDiv.append(trendTitle, trendDescription);
+
+  document.querySelector("#trendingNewsContainer").appendChild(trendingNews);
+}
+
+for (let i = 0; i < 5; i++) {
+  const breakingNewsContainer = document.querySelector(
+    "#breakingNewsContainer"
+  );
+  const breakingNews = document.createElement("div");
+  const breakingNewsImage = document.createElement("img");
+  const breakingNewsTitleDiv = document.createElement("div");
+  const breakingNewsTitle = document.createElement("h5");
+  breakingNewsTitle.textContent = "Title";
+  breakingNewsTitle.classList.add("breakingNewsTitle");
+
+  breakingNews.classList.add("breakingNews");
+  breakingNewsContainer.appendChild(breakingNews);
+  breakingNews.appendChild(breakingNewsImage);
+  breakingNews.appendChild(breakingNewsTitleDiv);
+  breakingNewsTitleDiv.appendChild(breakingNewsTitle);
+  breakingNewsImage.classList.add("breaking-news__image");
+}
+
 const headerNews = document.querySelector(".headingImage");
 const trendingNews = document.querySelector(".trending-news__image");
 const trendingNewsCatagories = document.querySelector(".trendingNews");
@@ -7,7 +47,7 @@ const url =
 fetch(url)
   .then((response) => response.json())
   .then((data) => {
-    headerNews.setAttribute("src", data.articles[8].urlToImage);
+    headerNews.setAttribute("src", data.articles[1].urlToImage);
   })
   .catch((error) => console.error("Error:", error));
 
@@ -20,34 +60,39 @@ fetch(url)
 const NewsAPI =
   "https://newsapi.org/v2/everything?sources=associated-press&apiKey=f9bce01001494f7dad469d0aeafbca16";
 
-const all = document.querySelectorAll(".trendingNews");
+const allTrendingNews = document.querySelectorAll(".trendingNews");
 
 fetch(NewsAPI)
   .then((response) => response.json())
   .then((data) => {
-    for (let i = 0; i < all.length; i++) {
-      const singletrendingNews = all[i].querySelector(".trending-news__image");
-      const singlTrendingNewsTitle = all[i].querySelector(
+    for (let i = 0; i < allTrendingNews.length; i++) {
+      const singleTrendingNews = allTrendingNews[i].querySelector(
+        ".trending-news__image"
+      );
+      const singleTrendingNewsTitle = allTrendingNews[i].querySelector(
         ".trendingNews-title"
       );
-      const singlTrendingNewsDescription = all[i].querySelector(
+      const singleTrendingNewsDescription = allTrendingNews[i].querySelector(
         ".trendingNews-description"
       );
-      singletrendingNews.setAttribute("src", data.articles[i].urlToImage);
-      singlTrendingNewsTitle.textContent = data.articles[i].title;
-      singlTrendingNewsDescription.textContent = data.articles[i].description;
+      singleTrendingNews.setAttribute("src", data.articles[i].urlToImage);
+      singleTrendingNewsTitle.textContent = data.articles[i].title;
+      singleTrendingNewsDescription.textContent = data.articles[i].description;
     }
   })
   .catch((error) => console.error("Error:", error));
 
-const alll = document.querySelectorAll(".breakingNews");
+const allBreakingNews = document.querySelectorAll(".breakingNews");
 
 fetch(url)
   .then((response) => response.json())
   .then((data) => {
-    for (let i = 0; i < alll.length; i++) {
-      const breakingNewsImage = alll[i].querySelector(".breaking-news__image");
-      const breakingNewsTitle = alll[i].querySelector(".breakingNewsTitle");
+    for (let i = 0; i < allBreakingNews.length; i++) {
+      const breakingNewsImage = allBreakingNews[i].querySelector(
+        ".breaking-news__image"
+      );
+      const breakingNewsTitle =
+        allBreakingNews[i].querySelector(".breakingNewsTitle");
 
       breakingNewsImage.setAttribute("src", data.articles[i].urlToImage);
       breakingNewsTitle.textContent = data.articles[i].title;
