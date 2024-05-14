@@ -87,8 +87,9 @@ fetch(NewsAPI)
   .catch((error) => console.error("Error:", error));
 
 const allBreakingNews = document.querySelectorAll(".breakingNews");
-
-fetch(url)
+const breakingNewsAPI =
+  "https://newsapi.org/v2/everything?sources=fox-news&apiKey=f9bce01001494f7dad469d0aeafbca16";
+fetch(breakingNewsAPI)
   .then((response) => response.json())
   .then((data) => {
     for (let i = 0; i < allBreakingNews.length; i++) {
