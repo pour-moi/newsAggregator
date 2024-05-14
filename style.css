@@ -15,7 +15,7 @@ ul {
   display: flex;
   gap: 2em;
 }
-.trend {
+.container {
   display: flex;
   justify-content: space-around;
 }
@@ -115,7 +115,7 @@ a {
   .headingImage {
     display: none;
   }
-  .trend {
+  .container {
     display: block;
     overflow: hidden;
   }
@@ -123,7 +123,7 @@ a {
     display: block;
     gap: 2em;
   }
-  .trendd {
+  #trendingNewsContainer {
     display: flex;
     overflow-y: scroll;
     gap: 1em;
