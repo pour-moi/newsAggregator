@@ -69,6 +69,10 @@ fetch(NewsAPI)
       const singleTrendingNews = allTrendingNews[i].querySelector(
         ".trending-news__image"
       );
+      const TrendingNews = allTrendingNews[i].querySelector(".trendingNews");
+      allTrendingNews[i].addEventListener("click", function () {
+        window.location = data.articles[i].url;
+      });
       const singleTrendingNewsTitle = allTrendingNews[i].querySelector(
         ".trendingNews-title"
       );
@@ -91,6 +95,9 @@ fetch(url)
       const breakingNewsImage = allBreakingNews[i].querySelector(
         ".breaking-news__image"
       );
+      allBreakingNews[i].addEventListener("click", function () {
+        window.location = data.articles[i].url;
+      });
       const breakingNewsTitle =
         allBreakingNews[i].querySelector(".breakingNewsTitle");
 
