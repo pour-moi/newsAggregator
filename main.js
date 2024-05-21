@@ -16,7 +16,7 @@ for (let i = 0; i < 7; i++) {
   trendingNews.append(trendingNewsImage, titleAndDescDiv);
   titleAndDescDiv.append(trendTitle, trendDescription);
 
-  document.querySelector("#trendingNewsContainer").appendChild(trendingNews);
+  // document.querySelector("#trendingNewsContainer").appendChild(trendingNews);
 }
 
 for (let i = 0; i < 5; i++) {
@@ -29,12 +29,13 @@ for (let i = 0; i < 5; i++) {
   const breakingNewsTitle = document.createElement("h5");
   breakingNewsTitle.textContent = "Title";
   breakingNewsTitle.classList.add("breakingNewsTitle");
-
   breakingNews.classList.add("breakingNews");
+
   breakingNewsContainer.appendChild(breakingNews);
   breakingNews.appendChild(breakingNewsImage);
   breakingNews.appendChild(breakingNewsTitleDiv);
   breakingNewsTitleDiv.appendChild(breakingNewsTitle);
+
   breakingNewsImage.classList.add("breaking-news__image");
 }
 
@@ -42,12 +43,15 @@ const headerNews = document.querySelector(".headingImage");
 const trendingNews = document.querySelector(".trending-news__image");
 const trendingNewsCatagories = document.querySelector(".trendingNews");
 const url =
-  "https://newsapi.org/v2/top-headlines?country=us&apiKey=f9bce01001494f7dad469d0aeafbca16";
+  "https://newsapi.org/v2/everything?sources=associated-press&apiKey=f9bce01001494f7dad469d0aeafbca16";
+const headingTitle = document.querySelector(".heading-title-box");
 
 fetch(url)
   .then((response) => response.json())
   .then((data) => {
-    headerNews.setAttribute("src", data.articles[1].urlToImage);
+    headerNews.setAttribute("src", data.articles[7].urlToImage);
+    headingTitle.textContent =
+      data.articles[7].content.substring(0, 199) + "...";
   })
   .catch((error) => console.error("Error:", error));
 
@@ -108,14 +112,14 @@ fetch(breakingNewsAPI)
   })
   .catch((error) => console.error("Error:", error));
 
-const sportsAll = document.querySelectorAll(".sportPage");
-const sportURL =
-  "https://newsapi.org/v2/everything?sources=espn&apiKey=f9bce01001494f7dad469d0aeafbca16";
-fetch(sportURL)
-  .then((response) => response.json())
-  .then((data) => {
-    for (let i = 0; i < sportsAll.length; i++) {
-      const sportsImage = sportsAll[i].querySelector(".sportNews-image");
-      sportsImage.setAttribute("src", data.articles[i].urlToImage);
-    }
-  });
+const categories = document.querySelector("ul");
+let category;
+
+categories.addEventListener("click", function (e) {
+  e.preventDefault();
+  category = e.target.innerHTML;
+
+  // Append the category to the URL
+  window.location.href =
+    "./categoryNews.html?category=" + encodeURIComponent(category);
+});
