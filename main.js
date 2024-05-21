@@ -119,7 +119,6 @@ categories.addEventListener("click", function (e) {
   e.preventDefault();
   category = e.target.innerHTML;
 
-  // Append the category to the URL
   window.location.href =
     "./categoryNews.html?category=" + encodeURIComponent(category);
 });
